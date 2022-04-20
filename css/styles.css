@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  grid-template-rows: 10% auto auto;
+  min-height: 100vh;
+  grid-template-columns: auto;
+  grid-template-areas:
+    "header"
+    "section"
+    "footer";
+  transition: 2s;
+}
+
+header {
+  background: linear-gradient(to right, #ff6060, rgb(255, 255, 0));
+  grid-area: header;
+}
+section {
+  background-color: lightgray;
+  grid-area: section;
+}
+footer {
+  background-color: white;
+  grid-area: footer;
+}
+
+img {
+  max-width: 100%;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*header*/
+
+.header__image {
+  display: inline-block;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  width: 6rem;
+}
+.logo :hover {
+  transform: rotatex(360deg);
+  transition: 2s;
+}
+nav .desktop__nav {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 0.3rem;
+}
+nav .desktop__nav a {
+  text-decoration: none;
+  color: rgb(66, 64, 64);
+}
+
+nav .desktop__nav :hover {
+  color: #ff0000;
+}
+
+nav .header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav .header__nav a {
+  display: inline-block;
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+nav .header__nav :hover {
+  color: #ff0000;
+}
+
+/*Seccion principal Hero (Index)*/
+
+.hero__container {
+  background-image: url(../imagenes/pizzalunaportada.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 540px;
+}
+
+.hero__text {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-top: 3rem;
+}
+
+/*footer*/
+
+.footer__text {
+  margin: 1rem;
+}
+
+.footer .footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__image {
+  display: inline;
+  margin-top: 0.5rem;
+  width: 3rem;
+  text-align: center;
+}
+.footer__credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__credits img {
+  margin-bottom: 1rem;
+}
+.footer__credits p {
+  font-size: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+/*Page:Menu*/
+
+.section__title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.submenu {
+  display: inline block;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-bottom: 5rem;
+}
+.submenu h2 {
+  animation-duration: 8s;
+  animation-name: color;
+}
+@keyframes color {
+  0% {
+    color: #000;
+  }
+  15% {
+    color: #3a0000;
+  }
+  25% {
+    color: #920000;
+  }
+  50% {
+    color: #ff0000;
+  }
+  75% {
+    color: #920000;
+  }
+  85% {
+    color: #3a0000;
+  }
+  100% {
+    color: #000;
+  }
+}
+.menuContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*cards styles*/
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  background: rgb(235, 230, 230);
+  border-radius: 00.5rem;
+  box-shadow: 0px 1px 10px rgb(41, 40, 40);
+}
+.menuContainer :hover {
+  box-shadow: 5px 5px 20px rgb(39, 39, 39);
+}
+.cards :hover {
+  box-shadow: none;
+}
+.cards p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.cards h3 {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+.card__image {
+  width: 15rem;
+  border-top-left-radius: 00.5rem;
+  border-top-right-radius: 00.5rem;
+}
+/*MEDIA QUERIES*/
+@media (min-width: 768px) {
+  nav .header__nav {
+    display: none;
+  }
+  nav .desktop__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 0.3rem;
+  }
+  nav .desktop__nav a {
+    text-decoration: none;
+    color: black;
+  }
+  .menuContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .cards {
+    margin-left: 3rem;
+  }
+  .hero__text {
+    font-size: 4rem;
+    margin-top: 10rem;
+  }
+}
